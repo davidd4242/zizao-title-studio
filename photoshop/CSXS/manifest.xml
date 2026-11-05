@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionManifest Version="7.0" ExtensionBundleId="com.zizao.title-studio" ExtensionBundleVersion="{{VERSION}}" ExtensionBundleName="字造">
+  <ExtensionList><Extension Id="com.zizao.title-studio.panel" Version="{{VERSION}}"/></ExtensionList>
+  <ExecutionEnvironment>
+    <HostList><Host Name="PHXS" Version="[25.12,27.99]"/><Host Name="PHSP" Version="[25.12,27.99]"/></HostList>
+    <LocaleList><Locale Code="All"/></LocaleList>
+    <RequiredRuntimeList><RequiredRuntime Name="CSXS" Version="12.0"/></RequiredRuntimeList>
+  </ExecutionEnvironment>
+  <DispatchInfoList><Extension Id="com.zizao.title-studio.panel"><DispatchInfo>
+    <Resources>
+      <MainPath>./panel/index.html</MainPath>
+      <ScriptPath>./jsx/import.jsx</ScriptPath>
+      <CEFCommandLine><Parameter>--enable-nodejs</Parameter></CEFCommandLine>
+    </Resources>
+    <Lifecycle><AutoVisible>true</AutoVisible></Lifecycle>
+    <UI><Type>Panel</Type><Menu>字造</Menu><Geometry>
+      <Size><Width>1180</Width><Height>780</Height></Size>
+      <MinSize><Width>420</Width><Height>460</Height></MinSize>
+      <MaxSize><Width>3840</Width><Height>2160</Height></MaxSize>
+    </Geometry></UI>
+  </DispatchInfo></Extension></DispatchInfoList>
+</ExtensionManifest>

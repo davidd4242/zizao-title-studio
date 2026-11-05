@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#ffffff"/>
+  <title>字造 · 封面标题工作室</title>
+  <link rel="icon" type="image/png" href="/favicon.png"/>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#fff}
+    .boot-shell,.boot-overlay{font-family:Inter,system-ui,'Microsoft YaHei',sans-serif;color:#000}
+    .boot-shell{height:100vh;display:grid;grid-template:56px 1fr/272px minmax(0,1fr) 300px;filter:blur(8px);pointer-events:none;user-select:none}
+    .boot-top{grid-column:1/-1;display:flex;align-items:center;gap:24px;padding:0 16px;border-bottom:1px solid #e6e6e6;font-size:14px}
+    .boot-top img{width:32px;height:32px}.boot-top strong{font-size:20px}.boot-top span:last-child{margin-left:auto;border-radius:50px;background:#000;color:#fff;padding:10px 24px}
+    .boot-panel{padding:20px 16px;border-right:1px solid #e6e6e6;font-size:12px;overflow:hidden}.boot-right{border-right:0;border-left:1px solid #e6e6e6}
+    .boot-tabs{display:flex;gap:12px;margin-bottom:24px}.boot-tabs b{padding:10px 16px;border-radius:50px;background:#000;color:#fff}
+    .boot-field{height:44px;border:1px solid #e6e6e6;border-radius:8px;margin:16px 0;background:#fff}
+    .boot-tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px}.boot-tiles i{display:block;height:100px;border-radius:8px;background:#f7f7f5;border:1px solid #e6e6e6}
+    .boot-center{display:flex;flex-direction:column;background:#f7f7f5;min-width:0}.boot-tools{height:56px;padding:16px 24px;background:#fff;border-bottom:1px solid #e6e6e6;font-size:12px}
+    .boot-canvas{flex:1;display:grid;place-items:center;padding:48px 24px}.boot-artboard{width:100%;aspect-ratio:16/9;background-color:#fff;background-image:conic-gradient(#e6e6e6 25%,#fff 0 50%,#e6e6e6 0 75%,#fff 0);background-size:16px 16px}
+    .boot-overlay{position:fixed;inset:0;display:grid;grid-template-columns:minmax(0,1fr);place-items:center;padding:24px;background:#ffffff80}
+    .boot-card{width:360px;max-width:100%;padding:32px;display:flex;flex-direction:column;align-items:center;gap:16px;background:#fff;border:1px solid #e6e6e6;border-radius:24px;box-shadow:0 4px 16px #0000000f;text-align:center}
+    .boot-card img{width:48px;height:48px}.boot-card b{font-size:20px;line-height:1.4}.boot-card p{margin:0;font-size:16px;line-height:1.45}
+    .boot-spinner{width:24px;height:24px;border:2px solid #e6e6e6;border-top-color:#000;border-radius:50%;animation:boot-turn .9s linear infinite}
+    @keyframes boot-turn{to{transform:rotate(360deg)}}
+    @media(max-width:960px){.boot-shell{grid-template-columns:1fr}.boot-panel{display:none}.boot-top span:not(:last-child){display:none}}
+    @media(prefers-reduced-motion:reduce){.boot-spinner{animation:none}}
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div class="boot-shell" aria-hidden="true" inert>
+      <header class="boot-top"><img src="/logo.png" alt=""/><strong>字造.</strong><span>封面标题工作室</span><span>保存工程</span><span>导出标题</span></header>
+      <aside class="boot-panel"><div class="boot-tabs"><b>风格</b><b>装饰</b><b>图层</b></div><strong>标题风格</strong><div class="boot-field"></div><div class="boot-tiles"><i></i><i></i><i></i><i></i><i></i><i></i></div></aside>
+      <main class="boot-center"><div class="boot-tools">选择与移动　 ·　逐字排版　 ·　添加文字</div><div class="boot-canvas"><div class="boot-artboard"></div></div></main>
+      <aside class="boot-panel boot-right"><strong>编辑属性</strong><div class="boot-field"></div><p>文字与字体</p><div class="boot-field"></div><div class="boot-field"></div><p>填色与描边</p><div class="boot-field"></div><div class="boot-field"></div></aside>
+    </div>
+    <div class="boot-overlay"><section class="boot-card" role="status" aria-live="polite"><img src="/logo.png" alt="字造"/><span class="boot-spinner" aria-hidden="true"></span><b>正在加载中</b><p>正在准备字体库与字形轮廓，完成后自动进入工作台。</p></section></div>
+  </div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

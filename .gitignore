@@ -1,0 +1,17 @@
+# 依赖与构建产物
+node_modules/
+dist/
+*.tsbuildinfo
+.vite/
+
+# 打包与交付产物（体积大、可复现）
+release/
+output/
+verification/
+插件-已解压/
+*.exe
+
+# 本地草稿与日志
+*.log
+.DS_Store
+Thumbs.db

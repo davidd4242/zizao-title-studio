@@ -1,0 +1,1 @@
+Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'Zizao.exe' -or $_.Name -eq '字造.exe' -or $_.Name -eq '字造 离线版.exe' } | Select-Object ProcessId,ParentProcessId,ExecutablePath,CommandLine | ConvertTo-Json -Depth 2

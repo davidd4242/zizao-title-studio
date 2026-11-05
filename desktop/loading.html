@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self'; script-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>字造 · 正在加载中</title>
+  <style>
+    :root { --ink: #000000; --canvas: #ffffff; --surface: #f7f7f5; --line: #e6e6e6; --lilac: #c5b0f4; }
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body { color: var(--ink); background: var(--surface); font: 13px/1.5 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif; }
+    .workbench { height: 100%; display: grid; grid-template: 48px 1fr / 240px 1fr 280px; filter: blur(6px); opacity: .55; pointer-events: none; user-select: none; }
+    .toolbar { grid-column: 1 / -1; display: flex; gap: 18px; align-items: center; border-bottom: 1px solid var(--line); background: var(--canvas); padding: 0 18px; }
+    .toolbar img { width: 26px; height: 26px; }
+    .bar { height: 9px; width: 80px; border-radius: 3px; background: #dedede; }
+    .short { width: 36px; }
+    .toolbar .accent { width: 64px; height: 28px; margin-left: auto; border-radius: 5px; background: var(--lilac); }
+    .panel { background: var(--canvas); padding: 24px 20px; border-right: 1px solid var(--line); }
+    .right { border-right: 0; border-left: 1px solid var(--line); }
+    .panel .bar { margin-bottom: 28px; width: 60%; }
+    .panel .field { height: 30px; margin-bottom: 20px; border-radius: 4px; background: var(--surface); border: 1px solid var(--line); }
+    .canvas { display: grid; place-items: center; padding: 64px; }
+    .artboard { width: 100%; aspect-ratio: 16 / 10; background: var(--canvas); box-shadow: 0 1px 12px #0000000a; }
+    .veil { position: fixed; inset: 0; display: grid; place-items: center; background: #f7f7f56b; padding: 24px; }
+    .status { width: 320px; max-width: 90vw; padding: 32px; text-align: center; background: #ffffffed; border: 1px solid var(--line); border-radius: 24px; box-shadow: 0 8px 32px #0000000a; }
+    .brand { display: block; width: 44px; height: 44px; margin: 0 auto 20px; }
+    .spinner { display: block; width: 22px; height: 22px; margin: 0 auto 14px; border: 2px solid var(--line); border-top-color: var(--lilac); border-radius: 50%; animation: turn .8s linear infinite; }
+    h1 { margin: 0; font-size: 20px; line-height: 28px; font-weight: 600; letter-spacing: -.2px; }
+    p { margin: 8px 0 0; font-size: 12px; line-height: 18px; color: #767676; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .failed .status { width: 480px; text-align: left; }
+    .failed .brand { margin-left: 0; }
+    .failed .spinner { display: none; }
+    .failed p { color: #444; }
+    @keyframes turn { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .spinner { animation: none; } }
+  </style>
+</head>
+<body>
+  <div class="workbench" aria-hidden="true" inert>
+    <div class="toolbar"><img src="icon.ico" alt=""><div class="bar"></div><div class="bar short"></div><div class="bar short"></div><div class="accent"></div></div>
+    <aside class="panel"><div class="bar"></div><div class="field"></div><div class="field"></div><div class="field"></div><div class="bar"></div></aside>
+    <main class="canvas"><div class="artboard"></div></main>
+    <aside class="panel right"><div class="bar"></div><div class="field"></div><div class="field"></div><div class="bar"></div><div class="field"></div></aside>
+  </div>
+  <div class="veil">
+    <section id="startup-status" class="status" role="status" aria-live="polite" aria-atomic="true">
+      <img class="brand" src="icon.ico" alt="字造">
+      <span class="spinner" aria-hidden="true"></span>
+      <h1 id="startup-title">正在加载中</h1>
+      <p id="startup-detail">字造 · 封面标题工作室</p>
+    </section>
+  </div>
+</body>
+</html>
